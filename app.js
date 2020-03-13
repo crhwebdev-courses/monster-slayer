@@ -24,7 +24,19 @@ new Vue({
 
       this.checkWin();
     },
-    specialAttack() {},
+    specialAttack() {
+      let damage = this.calculateDamage(10, 20);
+      this.monsterHealth -= damage;
+
+      if (this.checkWin()) {
+        return;
+      }
+
+      damage = this.calculateDamage(5, 12);
+      this.playerHealth -= damage;
+
+      this.checkWin();
+    },
     heal() {},
     giveUp() {},
     calculateDamage(min, max) {
