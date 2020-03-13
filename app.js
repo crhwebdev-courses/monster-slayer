@@ -40,7 +40,9 @@ new Vue({
 
       this.monsterAttacks();
     },
-    giveUp() {},
+    giveUp() {
+      this.gameIsRunning = false;
+    },
     monsterAttacks() {
       const damage = this.calculateDamage(5, 12);
       this.playerHealth -= damage;
